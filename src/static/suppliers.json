@@ -1,0 +1,35 @@
+{
+    "suppliers": {
+      "data": [
+        {
+          "id": 1,
+          "name": "Supplier A",
+          "email": "supplierA@example.com",
+          "phone": "+1234567890",
+          "address": "123 Main Street, City"
+        },
+        {
+          "id": 2,
+          "name": "Supplier B",
+          "email": "supplierB@example.com",
+          "phone": "+9876543210",
+          "address": "456 Elm Street, Town"
+        },
+        {
+          "id": 3,
+          "name": "Supplier C",
+          "email": "supplierC@example.com",
+          "phone": "+1122334455",
+          "address": "789 Oak Street, Village"
+        },
+        {
+          "id": 4,
+          "name": "Supplier D",
+          "email": "supplierD@example.com",
+          "phone": "+9988776655",
+          "address": "555 Pine Street, Village"
+        }
+      ]
+    }
+  }
+  

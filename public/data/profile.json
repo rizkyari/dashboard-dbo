@@ -1,0 +1,29 @@
+{
+    "profiles": [
+      {
+        "id": 1,
+        "name": "Admin User",
+        "avatar": "https://img.freepik.com/free-vector/red-rooster-cock-side-view-abstract_1284-16627.jpg",
+        "email": "admin",
+        "password": "admin",
+        "role": "admin"
+      },
+      {
+        "id": 2,
+        "name": "Staff User 1",
+        "avatar": "https://img.freepik.com/free-vector/vector-illustration-rooster_1441-9.jpg",
+        "email": "staff1@example.com",
+        "password": "staff1password",
+        "role": "staff"
+      },
+      {
+        "id": 3,
+        "name": "Staff User 2",
+        "avatar": "https://img.freepik.com/free-vector/vector-illustration-rooster_1441-9.jpg",
+        "email": "staff2@example.com",
+        "password": "staff2password",
+        "role": "staff"
+      }
+    ]
+  }
+  

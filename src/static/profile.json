@@ -1,0 +1,29 @@
+{
+    "profiles": [
+      {
+        "id": 1,
+        "name": "Admin User",
+        "avatar": "@/assets/admin.png",
+        "email": "admin@example.com",
+        "password": "adminpassword",
+        "role": "admin"
+      },
+      {
+        "id": 2,
+        "name": "Staff User 1",
+        "avatar": "@/assets/staff.png",
+        "email": "staff1@example.com",
+        "password": "staff1password",
+        "role": "staff"
+      },
+      {
+        "id": 3,
+        "name": "Staff User 2",
+        "avatar": "@/assets/staff.png",
+        "email": "staff2@example.com",
+        "password": "staff2password",
+        "role": "staff"
+      }
+    ]
+  }
+  
