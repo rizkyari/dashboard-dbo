@@ -8,6 +8,7 @@
             type="button"
             class="btn btn-outline-primary"
             @click="handleModal"
+            v-if="dataStore.currentUser.role !== 'staff'"
           >
             + Add
           </button>
@@ -47,12 +48,12 @@
                           >Detail</a
                         >
                       </li>
-                      <li>
+                      <li v-if="dataStore.currentUser.role !== 'staff'">
                         <a class="dropdown-item" @click="handleEdit(item, idx)"
                           >Edit</a
                         >
                       </li>
-                      <li>
+                      <li v-if="dataStore.currentUser.role !== 'staff'">
                         <a
                           class="dropdown-item"
                           @click="handleDelete(item, idx)"
@@ -117,13 +118,14 @@
 <script setup>
 // import axios from 'axios';
 import { ref, computed } from "vue";
+import { useDataStore } from '../store/data';
 import Modal from "@/components/ModalBase.vue";
 import AddOrder from "@/components/AddOrder.vue";
 import OrderData from "../static/orders.json";
 import DetailOrder from "@/components/DetailOrder.vue";
 import EditOrder from "@/components/EditOrder.vue";
 import DeleteOrder from "@/components/DeleteOrder.vue";
-
+const dataStore = useDataStore();
 const showModal = ref(false);
 const showDetail = ref(false);
 const showEdit = ref(false);

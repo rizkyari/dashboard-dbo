@@ -3,7 +3,7 @@
         <div class="bg-white p-3 rounded vh-100">
             <h2 class="mb-lg-5">Customer Management</h2>
             <div>
-                <div class="mb-3">
+                <div class="mb-3" v-if="dataStore.currentUser.role !== 'staff'">
                     <button type="button" class="btn btn-outline-primary" @click="handleModal">+ Add</button>
                 </div>
                 <div class="table-responsive">
@@ -30,8 +30,8 @@
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" @click="handleDetail(item)">Detail</a></li>
-                                            <li><a class="dropdown-item" @click="handleEdit(item,idx)">Edit</a></li>
-                                            <li><a class="dropdown-item" @click="handleDelete(item,idx)">Delete</a></li>
+                                            <li v-if="dataStore.currentUser.role !== 'staff'"><a class="dropdown-item" @click="handleEdit(item,idx)">Edit</a></li>
+                                            <li v-if="dataStore.currentUser.role !== 'staff'"><a class="dropdown-item" @click="handleDelete(item,idx)">Delete</a></li>
                                         </ul>
                                     </div>
                             </td>
@@ -80,7 +80,7 @@
 </template>
 
 <script setup>
-// import axios from 'axios';
+import { useDataStore } from '../store/data';
 import { ref, computed } from 'vue';
 import Modal from '@/components/ModalBase.vue'; 
 import AddCustomer from '@/components/AddCustomer.vue';
@@ -88,7 +88,7 @@ import CusData from '../static/customers.json';
 import DetailCustomer from '@/components/DetailCustomer.vue';
 import EditCustomer from '@/components/EditCustomer.vue';
 import DeleteCustomer from '@/components/DeleteCustomer.vue';
-
+const dataStore = useDataStore();
 const showModal = ref(false);
 const showDetail = ref(false);
 const showEdit = ref(false);

@@ -7,7 +7,7 @@ export const useDataStore = defineStore('data',() => {
         avatar: 'https://img.freepik.com/free-photo/user-profile-front-side_187299-39595.jpg',
         name: 'user',
         email: '',
-        role: '',
+        role: 'staff',
         password: '',
     });
     const hideSidebar = ref(false);

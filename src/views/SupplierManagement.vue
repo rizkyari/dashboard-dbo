@@ -8,6 +8,7 @@
               type="button"
               class="btn btn-outline-primary"
               @click="handleModal"
+              v-if="dataStore.currentUser.role !== 'staff'"
             >
               + Add
             </button>
@@ -47,12 +48,12 @@
                             >Detail</a
                           >
                         </li>
-                        <li>
+                        <li v-if="dataStore.currentUser.role !== 'staff'">
                           <a class="dropdown-item" @click="handleEdit(item, idx)"
                             >Edit</a
                           >
                         </li>
-                        <li>
+                        <li v-if="dataStore.currentUser.role !== 'staff'">
                           <a
                             class="dropdown-item"
                             @click="handleDelete(item, idx)"
@@ -116,13 +117,14 @@
   
   <script setup>
   import { ref, computed } from "vue";
+  import { useDataStore } from '../store/data';
   import Modal from "@/components/ModalBase.vue";
   import AddSupplier from "@/components/AddSupplier.vue";
   import SupplierData from "../static/suppliers.json";
   import DetailSupplier from "@/components/DetailSupplier.vue";
   import EditSupplier from "@/components/EditSupplier.vue";
   import DeleteSupplier from "@/components/DeleteSupplier.vue";
-  
+  const dataStore = useDataStore();
   const showModal = ref(false);
   const showDetail = ref(false);
   const showEdit = ref(false);
